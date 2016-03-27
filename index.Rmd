@@ -1,12 +1,47 @@
 ---
-title: "lvbr"
-author: "Lina"
-date: "24 de marzo de 2016"
+title: "Introducción a Rmarkdown"
+author: "Lvbr"
+date: "26 de marzo de 2016"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## TEST for page
+#  Taller 1
+
+## Gráfica 
+
+```{r, fig.cap="**Figura 1**. *Crecimiento bacteriano vs tiempo*"}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(ggExtra)
+
+Cell=read.csv("CellGrowth.csv")
+ ggplot(Cell, aes(CellCount, Time))+
+   geom_point()+
+   theme_bw()+
+   removeGrid(x=TRUE, y=TRUE)
+
+```
+
+## Imagen desde Internet 
+
+### Monday's vibe at Bren 
+
+![](Brenlife.png)
+
+## Tabla manual
+
+Tablas de multiplicar
+
+X  | 1 | 2 | 3 | 4 | 5
+---|---|---|---|---|---
+1 |1 |2 |3 |4 |5
+2 |2 |4 |6 |8 |10
+3 |3 |6 |9 |12|15
+4 |4 |8 |12|16|20
+5 |5 |10|15|20|25
+
